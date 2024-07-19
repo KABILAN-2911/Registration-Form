@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+<style>
+    body{
+        background-color:rgb(202, 234, 239);
+    }
+
+</style>
+
+</head>
+<body>
+    
+    <div class="container mt-5">
+        <div class="container" style="border: solid 1px black; display: inline-block;">
+            <p class="h1 text-center mt-2">REGISTRATION FORM</p>
+        <form class="form mb-4 align-item-center container justify-content-center text-center mt-5" name="validform"  onsubmit="return validationform()">
+            <input class="form-control mb-3" type="text" name="fname" placeholder="Enter your First Name">
+            <input class="form-control mb-3" type="text" name="lname" placeholder="Enter your Lastname">
+            <input class="form-control mb-3" type="text" name="pno" placeholder="Enter your Phone Number">
+            <input class="form-control mb-3" type="text" name="city" placeholder="Enter your City">
+            <textarea class="form-control pb-5 mb-3" type="text" name="address" placeholder="Enter your address"></textarea>
+            <a href="#"><button class="btn btn-primary justify-content-center mt-2 me-2 px-5" type="submit" onclick="">Submit</button></a>
+        </form>
+        </div>
+    </div>
+
+    <script>
+      function validationform(){
+    let firstname = document.validform.fname.value;
+    let lastname = document.validform.lname.value;
+    let pno = document.validform.pno.value;
+    let city = document.validform.city.value;
+    let address = document.validform.address.value;
+
+    if(firstname==="" || lastname==="" || pno==="" ||city==="" ||address===""){
+        alert("Fill all the Required Details");
+        return false;
+    }
+    else if(isNaN(pno) || (pno.length!=10)){
+        alert("Enter Valid Phone Number");
+        return false;
+    }
+    else{
+        alert("Successfully Registered")
+    }
+
+
+}
+
+    </script>
+
+</body>
+</html>
